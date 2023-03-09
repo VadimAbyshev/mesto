@@ -1,0 +1,8 @@
+.element{
+    background-color: white;
+    color: black;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 10px;
+}

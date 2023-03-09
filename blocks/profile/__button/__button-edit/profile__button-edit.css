@@ -6,6 +6,6 @@
     background-color: #000;
     background-position: center;
     border: 1px solid #fff;
-    align-self: center;
-    display: flex;
+    margin-top: 15px;
+    grid-area: profile__button-edit;
 }

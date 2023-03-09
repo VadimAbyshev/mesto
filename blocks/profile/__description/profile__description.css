@@ -1,6 +1,5 @@
 .profile__description {
     margin: 0;
-    padding-top: 16px;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -8,4 +7,5 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    grid-area: profile__description;
 }

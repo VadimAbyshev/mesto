@@ -3,6 +3,7 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__content/profile__content.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__button/__button-edit/profile__button-edit.css);
@@ -10,7 +11,18 @@
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__description/profile__description.css);
 @import url(../blocks/elements/elements.css);
-
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__info/element__info.css);
+@import url(../blocks/element/__title/element____title.css);
+@import url(../blocks/element/__image/element__images.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__close-button/popup__close-button.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__text-input/form__text-input.css);
+@import url(../blocks/form/__save-button/form__save-button.css);
+@import url(../blocks/popup/__opened/popup__opened.css);
 body{
     background-color:  #000000;
     margin: 0;
