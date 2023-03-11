@@ -5,9 +5,11 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     grid-row-gap: 16px;
+    max-width: 336px;
     grid-column-gap: 18px;
     grid-template-areas: "profile__name  profile__button-edit"
                     "profile__description  profile__description";
+                    
 
 }
 
