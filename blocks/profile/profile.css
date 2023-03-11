@@ -7,3 +7,30 @@
     justify-content: space-between;
   
 }
+
+@media  screen and (max-width: 980px) {
+    .profile {
+        width: 780px;
+    }
+}
+
+@media  screen and (max-width: 813px) {
+    .profile{
+        width: 550px;
+    }
+}
+
+@media  screen and (max-width: 670px) {
+    .profile {
+        width: 400px;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media  screen and (max-width: 420px) {
+    .profile {
+        width: 282px;
+        margin-top: 42px;
+    }
+}

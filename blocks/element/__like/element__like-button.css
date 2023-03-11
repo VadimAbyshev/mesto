@@ -4,5 +4,8 @@
     width: 22px;
     height: 19px;
     background-size: contain;
-    background-color: black;
+    background-color: white;
+    background-size: contain;
+    border: none;
+    align-self: center;
 }

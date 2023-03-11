@@ -9,3 +9,12 @@
     overflow: hidden;
     grid-area: profile__name;
 }
+
+@media screen and (max-width: 670px) {
+    .profile__name {
+        font-size: 27px;
+        line-height: 33px;
+
+
+    }
+}

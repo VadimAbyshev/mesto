@@ -10,3 +10,21 @@
                     "profile__description  profile__description";
 
 }
+
+@media  screen and (max-width: 813px) {
+    .profile__info{
+       padding-right: 50px;
+    }
+}
+@media  screen and (max-width: 670px) {
+    .profile__info {
+        grid-column-gap: 10px;
+        padding-left: 0;
+        padding-right: 0;
+        align-items:center;
+        grid-row-gap: 14px;
+        text-align: center;
+        padding-top: 26px;
+        padding-bottom: 36px;
+    }
+}

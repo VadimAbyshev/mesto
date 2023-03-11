@@ -3,3 +3,23 @@
     max-width: 880px;
     border-bottom: 1px solid rgba(84,84,84,.7);
 }
+
+@media  screen and (max-width: 980px) {
+    .header {
+        width: 780px;
+    }
+}
+
+@media  screen and (max-width: 813px) {
+    .header {
+        width: 550px;
+    }
+}
+
+@media  screen and (max-width: 670px) {
+    .header {
+        width: 100%;
+        margin-top: 28px;
+    }
+}
+

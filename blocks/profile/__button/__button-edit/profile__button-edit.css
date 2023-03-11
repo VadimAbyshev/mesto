@@ -9,3 +9,10 @@
     margin-top: 15px;
     grid-area: profile__button-edit;
 }
+
+@media screen and (max-width: 670px) {
+    .profile__button-edit {
+        margin: 0;
+
+    }
+}

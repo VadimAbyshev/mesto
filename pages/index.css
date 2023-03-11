@@ -1,5 +1,6 @@
 @import url(../vendor/fonts/fonts.css);
 @import url(../blocks/page/page.css);
+@import url(../blocks/decoration/decoration.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/profile/profile.css);
@@ -15,6 +16,7 @@
 @import url(../blocks/element/__info/element__info.css);
 @import url(../blocks/element/__title/element____title.css);
 @import url(../blocks/element/__image/element__images.css);
+@import url(../blocks/element/__like/element__like-button.css);
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__container/popup__container.css);
@@ -23,6 +25,8 @@
 @import url(../blocks/form/__text-input/form__text-input.css);
 @import url(../blocks/form/__save-button/form__save-button.css);
 @import url(../blocks/popup/__opened/popup__opened.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/footer/footer.css);
 body{
     background-color:  #000000;
     margin: 0;

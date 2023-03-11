@@ -6,4 +6,5 @@
     flex-direction: column;
     height: 330px;
     border-radius: 10px;
+    position: relative;
 }
