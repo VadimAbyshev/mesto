@@ -1,8 +1,8 @@
 let popup = document.querySelector('.popup');
 let formElement = document.querySelector('.popup__container');
 // поля формы
-let nameInput = document.querySelector('.popup__form-text_type_name');
-let jobInput = document.querySelector('.popup__form-text_type_discription');
+let nameInput = document.querySelector('.form__text_type_name');
+let jobInput = document.querySelector('.form__text_type_discription');
 let editButton = document.querySelector('.profile__button-edit');
 let NameAuthor = document.querySelector('.profile__name');
 let NameDescription = document.querySelector('.profile__description');
