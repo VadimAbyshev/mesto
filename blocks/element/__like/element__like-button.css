@@ -8,3 +8,7 @@
     border: none;
     align-self: center;
 }
+
+.element__like-button:hover{
+    opacity: 0.5;
+}

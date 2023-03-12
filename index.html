@@ -8,7 +8,7 @@
   <title>Путишествие по России</title>
 </head>
 
-<body>
+<body class="body">
   <div class="page">
     <header class="header">
       <img class="header__logo" alt="Логотип Место" src="./images/header__logo.svg">
@@ -16,7 +16,7 @@
   <main>
     <section class="profile">
       <div class="profile__content">
-      <img class="profile__avatar" alt="Жак Ив Кусто" src="./images/profile__avatar.svg">
+      <img class="profile__avatar" alt="Жак Ив Кусто" src="./images/profile__avatar.png">
       <div class="profile__info">
         <h1 class="profile__name">Жак-Ив Кусто</h1>
         <button class="profile__button-edit decoration" type="button"></button>
@@ -79,22 +79,22 @@
     </section>
   </main>
     <footer class="footer">
-      <h2 class="footer__copyright">©2023 Абышев Вадим Олегович</h2>
+      <p class="footer__copyright">©2023 Абышев Вадим Олегович</p>
 
     </footer>
     <div class="popup">
       <div class="popup__container">
       <button class="popup__close-button decoration" type="button"></button> 
+      <h2 class="form__title">Редактировать профиль</h2>
       <form action="#" class="form" name="edit-info">
-        <h2 class="form__title">Редактировать профиль</h2>
-        <input type="text" name="name" class="form__text-input" id="name">
-        <input type="text" name="description" class="form__text-input" id="description">
-        <input type="submit" value="Сохранить" class="form__save-button decoration">
+        <input type="text" name="name" class="form__text-input form__text_edit_name" id="name">
+        <input type="text" name="description" class="form__text-input form__text_edit_discription" id="description">
+        <button type="submit" class="form__save-button decoration">Сохранить</button>
       </form>
     </div>
     </div>
   </div>
-  <script src="./index.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>

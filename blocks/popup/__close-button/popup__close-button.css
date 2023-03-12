@@ -9,3 +9,17 @@
     border: none;
     background-color: transparent;
 }
+
+.popup__close-button:hover{
+    opacity: 0.6;
+}
+
+@media  screen and (max-width: 670px) {
+    .popup__close-button {
+        height: 20px;
+        width: 20px;
+        right: -2px;
+        top: -36px;
+        
+    }
+}
