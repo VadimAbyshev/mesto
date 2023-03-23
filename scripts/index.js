@@ -4,15 +4,15 @@ let formElement = document.querySelector('.popup__container');
 let nameInput = document.querySelector('.form__text-input_type_name');
 let jobInput = document.querySelector('.form__text-input_type_discription');
 let editButton = document.querySelector('.profile__button-edit');
-let NameAuthor = document.querySelector('.profile__name');
-let NameDescription = document.querySelector('.profile__description');
+let nameAuthor = document.querySelector('.profile__name');
+let nameDescription = document.querySelector('.profile__description');
 let closeButton = document.querySelector('.popup__close-button');
 let editForm = document.querySelector('.form')
 
 function openPopup()  {
   popup.classList.add('popup_opened');
-  nameInput.value =  NameAuthor.textContent;
-  jobInput.value = NameDescription.textContent;
+  nameInput.value =  nameAuthor.textContent;
+  jobInput.value = nameDescription.textContent;
 
 }
 
@@ -22,8 +22,8 @@ function closePopup() {
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
-  NameAuthor.textContent = nameInput.value;
-  NameDescription.textContent = jobInput.value;
+  nameAuthor.textContent = nameInput.value;
+  nameDescription.textContent = jobInput.value;
   closePopup();
   
 }
