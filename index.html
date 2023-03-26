@@ -26,63 +26,26 @@
       <button class="profile__button-add decoration" type="button"></button>
     </section>
 
+    <template id="element-template">
+      <div class="element">
+        <button class="decoration element__bucket-button"></button>
+        <img class="element__image" alt="#" src="#">
+        <div class="element__info">
+          <h2 class="element__title"></h2>
+          <button class="decoration element__like-button" type="button"></button>
+        </div>
+      </div>
+    </template>
 
     <section class="elements">
-      <div class="element">
-        <img class="element__image" alt="Карачевск" src="./images/element-karachevsk.jpg">
-        <div class="element__info">
-          <h2 class="element__title">Карачевск</h2>
-          <button class="element__like-button decoration" type="button"></button>
-        </div>
-      </div>
-    
-      <div class="element">
-        <img class="element__image" alt="Домбай" src="./images/element-dombai.jpg">
-        <div class="element__info">
-          <h2 class="element__title">Домбай</h2>
-          <button class="element__like-button decoration" type="button"></button>
-        </div>
-      </div>
-    
-      <div class="element">
-        <img class="element__image" alt="Тюмень" src="./images/elemnent-tyumen.jpg">
-        <div class="element__info">
-          <h2 class="element__title">Тюмень</h2>
-          <button class="element__like-button decoration" type="button"></button>
-        </div>
-      </div>
 
-      
-      <div class="element">
-        <img class="element__image" alt="Эльбрус" src="./images/element-elbrus.jpg">
-        <div class="element__info">
-          <h2 class="element__title">Эльбрус</h2>
-          <button class="element__like-button decoration" type="button"></button>
-        </div>
-      </div>
-      
-      <div class="element">
-        <img class="element__image" alt="Черкасская" src="./images/element-cherkasskay.jpg">
-        <div class="element__info">
-          <h2 class="element__title">Черкасская</h2>
-          <button class="element__like-button decoration" type="button"></button>
-        </div>
-      </div>
-      
-      <div class="element">
-        <img class="element__image" alt="Архыз" src="./images/element - arhiz.jpg">
-        <div class="element__info">
-          <h2 class="element__title">Архыз</h2>
-          <button class="element__like-button decoration" type="button"></button>
-        </div>
-      </div>
     </section>
   </main>
     <footer class="footer">
       <p class="footer__copyright">©2023 Абышев Вадим Олегович</p>
 
     </footer>
-    <div class="popup">
+    <div class="popup popup__edit-profile">
       <div class="popup__container">
       <button class="popup__close-button decoration" type="button"></button> 
       <h2 class="popup__title">Редактировать профиль</h2>
@@ -93,6 +56,27 @@
       </form>
     </div>
     </div>
+
+    <div class="popup popup__add-card">
+      <div class="popup__container">
+      <button class="popup__close-button decoration" type="button"></button> 
+      <h2 class="popup__title">Новое место</h2>
+      <form action="#" class="form form__add-card" name="place-add">
+        <input type="text" name="place-name" class="form__text-input form__text-input_type_place-name" id="place-name" placeholder="Название">
+        <input type="text" name="place-link" class="form__text-input form__text-input_type_place-link" id="place-link" placeholder="Ссылка на картинку">
+        <button type="submit" class="form__save-button decoration">Добавить</button>
+      </form>
+    </div>
+    </div>
+
+    <div class="popup popup__open-card">
+      <figure class="popup__figure-card">
+        <button class="popup__close-button decoration" type="button"></button>
+        <img class="popup__figure-image" src="#" alt="#">
+        <figcaption class="popup__figure-caption"></figcaption>
+      </figure>
+    </div>
+    
   </div>
   <script src="./scripts/index.js"></script>
 </body>
