@@ -28,9 +28,9 @@ function handleFormSubmit(evt) {
   
 }
 const addCardButton = document.querySelector('.profile__button-add');
-const popupAddCard = document.querySelector('.popup__add-card');
+const popupAddCard = document.querySelector('.popup_add-card');
 const closeAddButton = popupAddCard.querySelector('.popup__close-button');
-const formAddCard = document.querySelector('.form__add-card');
+const formAddCard = document.querySelector('.form_add-card');
 const placeName = document.querySelector('.form__text-input_type_place-name');
 const placeLink = document.querySelector('.form__text-input_type_place-link');
 const buttonAddCard = popupAddCard.querySelector('.form__save-button');
@@ -80,7 +80,7 @@ function deleteCardOnClick (event) {
   event.target.parentNode.remove()
 } 
 
-const openCard = document.querySelector('.popup__open-card');
+const openCard = document.querySelector('.popup_open-card');
 const closeCardButton = openCard.querySelector('.popup__close-button');
 const figureImage = openCard.querySelector('.popup__figure-image');
 const figureTitle = openCard.querySelector('.popup__figure-caption');
