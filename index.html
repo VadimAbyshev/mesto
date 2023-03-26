@@ -13,60 +13,64 @@
     <header class="header">
       <img class="header__logo" alt="Логотип Место" src="./images/header__logo.svg">
     </header>
-  <main>
-    <section class="profile">
-      <div class="profile__content">
-      <img class="profile__avatar" alt="Жак Ив Кусто" src="./images/profile__avatar.png">
-      <div class="profile__info">
-        <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <button class="profile__button-edit decoration" type="button"></button>
-        <p class="profile__description">Исследователь океана</p>
-      </div>
-      </div>
-      <button class="profile__button-add decoration" type="button"></button>
-    </section>
-
-    <template id="element-template">
-      <div class="element">
-        <button class="decoration element__bucket-button"></button>
-        <img class="element__image" alt="#" src="#">
-        <div class="element__info">
-          <h2 class="element__title"></h2>
-          <button class="decoration element__like-button" type="button"></button>
+    <main>
+      <section class="profile">
+        <div class="profile__content">
+          <img class="profile__avatar" alt="Жак Ив Кусто" src="./images/profile__avatar.png">
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__button-edit decoration" type="button"></button>
+            <p class="profile__description">Исследователь океана</p>
+          </div>
         </div>
-      </div>
-    </template>
+        <button class="profile__button-add decoration" type="button"></button>
+      </section>
 
-    <section class="elements">
+      <template id="element-template">
+        <div class="element">
+          <button class="decoration element__bucket-button"></button>
+          <img class="element__image" alt="#" src="#">
+          <div class="element__info">
+            <h2 class="element__title"></h2>
+            <button class="decoration element__like-button" type="button"></button>
+          </div>
+        </div>
+      </template>
 
-    </section>
-  </main>
+      <section class="elements">
+
+      </section>
+    </main>
     <footer class="footer">
       <p class="footer__copyright">©2023 Абышев Вадим Олегович</p>
 
     </footer>
+
     <div class="popup popup__edit-profile">
       <div class="popup__container">
-      <button class="popup__close-button decoration" type="button"></button> 
-      <h2 class="popup__title">Редактировать профиль</h2>
-      <form action="#" class="form" name="edit-info">
-        <input type="text" name="name" class="form__text-input form__text-input_type_name" id="name">
-        <input type="text" name="description" class="form__text-input form__text-input_type_discription" id="description">
-        <button type="submit" class="form__save-button decoration">Сохранить</button>
-      </form>
-    </div>
+        <button class="popup__close-button decoration" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form action="#" class="form" name="edit-info">
+          <input type="text" name="name" class="form__text-input form__text-input_type_name" id="name">
+          <input type="text" name="description" class="form__text-input form__text-input_type_discription"
+            id="description">
+          <button type="submit" class="form__save-button decoration">Сохранить</button>
+        </form>
+      </div>
     </div>
 
     <div class="popup popup__add-card">
       <div class="popup__container">
-      <button class="popup__close-button decoration" type="button"></button> 
-      <h2 class="popup__title">Новое место</h2>
-      <form action="#" class="form form__add-card" name="place-add">
-        <input type="text" name="place-name" class="form__text-input form__text-input_type_place-name" id="place-name" placeholder="Название">
-        <input type="text" name="place-link" class="form__text-input form__text-input_type_place-link" id="place-link" placeholder="Ссылка на картинку">
-        <button type="submit" class="form__save-button decoration">Добавить</button>
-      </form>
-    </div>
+        <button class="popup__close-button decoration" type="button"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form action="#" class="form form__add-card" name="place-add">
+          <input type="text" name="place-name" class="form__text-input form__text-input_type_place-name" id="place-name"
+            placeholder="Название">
+          <input type="text" name="place-link" class="form__text-input form__text-input_type_place-link" id="place-link"
+            placeholder="Ссылка на картинку">
+          <button type="submit" class="form__save-button decoration">Добавить</button>
+        </form>
+      </div>
     </div>
 
     <div class="popup popup__open-card">
@@ -76,7 +80,7 @@
         <figcaption class="popup__figure-caption"></figcaption>
       </figure>
     </div>
-    
+
   </div>
   <script src="./scripts/index.js"></script>
 </body>
