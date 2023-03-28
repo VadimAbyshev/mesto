@@ -9,7 +9,7 @@ const profileCloseButton = document.querySelector('.popup__close-button');
 const editForm = document.querySelector('.form')
 
 
-function popupOpen(popup) {
+function openPoup(popup) {
   popup.classList.add('popup_opened');
 }
 function closePopup(popup){
@@ -17,7 +17,7 @@ function closePopup(popup){
 }
 
 function openEditPopup(){
-  popupOpen(profilePopup);
+  openPoup(profilePopup);
   nameInput.value =  nameAuthor.textContent;
   jobInput.value = nameDescription.textContent;
 }
@@ -73,7 +73,7 @@ function likeCardOnCLick(evt){
   evt.target.classList.toggle('element__like-button_active');
 }
 function openAddPopup(){
-  popupOpen(popupAddCard);
+  openPoup(popupAddCard);
 }
 
 function closeAddPopup(){
@@ -94,7 +94,7 @@ function openFigurePopup(name, link){
   figureImage.src = link
   figureTitle.alt = name
   figureTitle.textContent = name
-  popupOpen(openCard);
+  openPoup(openCard);
 }
 function closeFigurePopup(){
   closePopup(openCard);
