@@ -5,3 +5,9 @@
     flex-direction: column;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 670px){
+    .popup__input_form{
+        margin-bottom: 0;
+    }
+    }

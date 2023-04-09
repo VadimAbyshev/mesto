@@ -6,10 +6,17 @@
         line-height: 15px;
         color: red;
         margin-top: 5px;
-        height: 15px;
+        min-height: 30px;
         visibility: hidden;
+        width: 358px;
 }
 
 .popup__error_span:last-of-type{
     margin-bottom: 0;
+}
+
+@media screen and (max-width: 670px){
+.popup__error_span {
+    width: 238px;
+}
 }

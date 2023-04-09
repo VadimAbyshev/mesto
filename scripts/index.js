@@ -8,14 +8,24 @@ const profileCloseButton = document.querySelector('.popup__close-button');
 const editForm = document.querySelector('.form')
 
 
+
 function openPoup(popup) {
+  
   popup.classList.add('popup_opened');
-}
+};
 function closePopup(popup){
   popup.classList.remove('popup_opened');
-}
+};
+
+function closePopupOverlayClick (e) {
+  if (e.target === e.currentTarget) {
+    closePopup(e.target)
+  }
+};
+
 
 function openEditPopup(){
+  resetErrorForm(handleProfileFormSubmit);
   openPoup(profilePopup);
   nameInput.value =  nameAuthor.textContent;
   jobInput.value = nameDescription.textContent;
@@ -134,6 +144,7 @@ closeCardButton.addEventListener('click', closeFigurePopup)
 closeAddButton.addEventListener('click', closeAddPopup)
 addCardButton.addEventListener('click', openAddPopup)
 editForm.addEventListener('submit', handleProfileFormSubmit)
-
-
-
+popupAddCard.addEventListener('mousedown', (e) => closePopupOverlayClick(e))
+profilePopup.addEventListener('mousedown', (e) => closePopupOverlayClick(e))
+popupAddCard.addEventListener('mousedown', (e) => closePopupOverlayClick(e))
+openCard.addEventListener('click', (e) => closePopupOverlayClick(e))

@@ -23,7 +23,7 @@ function hangEventListenner(inputList, errorSelector, buttonSave, inactiveButton
     inputList.forEach((input) => {
         input.addEventListener('input', () => {
             checkInputValidity(input, errorSelector, textErrorClass, inputErrorClass,);
-            //togglleButtonState(input, buttonSave, inactiveButtonClass)
+           togglleButtonState(inputList, buttonSave, inactiveButtonClass)
         })
     })
 };
@@ -54,5 +54,32 @@ function showInputError(input, invalidationError,  textErrorClass, inputErrorCla
     invalidationError.textContent = input.validationMessage;
     invalidationError.classList.add(textErrorClass);
 }
+ 
+function validInput(inputList){
+    return Array.from(inputList).every((input) => input.validity.valid)
+}
+
+
+
+
+function togglleButtonState(inputList, buttonSave, inactiveButtonClass){
+    if (validInput(inputList)) {
+      buttonSave.classList.remove(inactiveButtonClass)
+      buttonSave.disabled = false
+    }
+    else {
+      buttonSave.classList.add(inactiveButtonClass)
+      buttonSave.disabled = true
+    }
+}
+
+function resetErrorForm(form){
+    form.querySelectorAll(validationConfig.inputSelector).forEach((input) => {
+        const invalidationError = document.querySelector(`${validationConfig.errorSelector}${input.name}`);
+        if (!input.validity.valid){
+            hideInputError(input, invalidationError, validationConfig.inputErrorClass, validationConfig.textErrorClass)
+        }
+    })
+} 
 
 enableValidation(validationConfig);
