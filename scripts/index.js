@@ -11,37 +11,37 @@ const buttonListForm = editForm.querySelector('.form__save-button');
 
 
 function openPoup(popup) {
-  
+
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEsc);
 }
-function closePopup(popup){
+function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupEsc);
 }
 
-function closePopupOverlayClick (e) {
+function closePopupOverlayClick(e) {
   if (e.target === e.currentTarget) {
     closePopup(e.target)
   }
 };
-function closePopupEsc(evt){
-  if (evt.key === 'Escape'){
+function closePopupEsc(evt) {
+  if (evt.key === 'Escape') {
     const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
   }
 }
 
-function openEditPopup(){
-  
+function openEditPopup() {
+
   //resetValidationByClosePopup(handleProfileFormSubmit);
   togglleButtonState(inputListForm, buttonListForm, validationConfig.inactiveButtonClass)
   openPoup(profilePopup);
   disableButton(buttonListForm, validationConfig);
-  nameInput.value =  nameAuthor.textContent;
+  nameInput.value = nameAuthor.textContent;
   jobInput.value = nameDescription.textContent;
 }
-function closeEditPopup(){
+function closeEditPopup() {
   closePopup(profilePopup);
 }
 
@@ -88,23 +88,23 @@ const initialCards = [
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
-]; 
-function likeCardOnCLick(evt){
+];
+function likeCardOnCLick(evt) {
   evt.target.classList.toggle('element__like-button_active');
 }
-function openAddPopup(){
+function openAddPopup() {
   disableButton(buttonAddCard, validationConfig);
   togglleButtonState(inputListForm, buttonListForm, validationConfig.inactiveButtonClass);
   openPoup(popupAddCard);
 }
 
-function closeAddPopup(){
+function closeAddPopup() {
   closePopup(popupAddCard);
 }
 
-function deleteCardOnClick (event) {
+function deleteCardOnClick(event) {
   event.target.closest('.element').remove();
-} 
+}
 
 const openCard = document.querySelector('.popup_open-card');
 const closeCardButton = openCard.querySelector('.popup__close-button');
@@ -112,32 +112,32 @@ const figureImage = openCard.querySelector('.popup__figure-image');
 const figureTitle = openCard.querySelector('.popup__figure-caption');
 
 
-function openFigurePopup(name, link){
+function openFigurePopup(name, link) {
   figureImage.src = link
   figureTitle.alt = name
   figureTitle.textContent = name
   openPoup(openCard);
 }
-function closeFigurePopup(){
+function closeFigurePopup() {
   closePopup(openCard);
 }
 
-function getCard(item){
-    const elementTemplate = elementsTemplate.querySelector('.element').cloneNode(true); //загрузил данные из шаблона
-    const elementTitle = elementTemplate.querySelector('.element__title');
-    elementTitle.textContent = item.name;
-    const elementButtonDelete = elementTemplate.querySelector('.element__bucket-button'); //кнопка мусорки
-    const elementImage = elementTemplate.querySelector('.element__image'); //передал изображение 
-    elementImage.src = item.link;
-    elementImage.alt = item.name;
-    const likeButton = elementTemplate.querySelector('.element__like-button'); //записал сердечко    
-    likeButton.addEventListener('click', evt => likeCardOnCLick(evt));
-    elementButtonDelete.addEventListener('click', event => deleteCardOnClick(event)); //работа мусорки
-    elementImage.addEventListener('click',() => openFigurePopup(item.name, item.link));
-    return elementTemplate;
+function getCard(item) {
+  const elementTemplate = elementsTemplate.querySelector('.element').cloneNode(true); //загрузил данные из шаблона
+  const elementTitle = elementTemplate.querySelector('.element__title');
+  elementTitle.textContent = item.name;
+  const elementButtonDelete = elementTemplate.querySelector('.element__bucket-button'); //кнопка мусорки
+  const elementImage = elementTemplate.querySelector('.element__image'); //передал изображение 
+  elementImage.src = item.link;
+  elementImage.alt = item.name;
+  const likeButton = elementTemplate.querySelector('.element__like-button'); //записал сердечко    
+  likeButton.addEventListener('click', evt => likeCardOnCLick(evt));
+  elementButtonDelete.addEventListener('click', event => deleteCardOnClick(event)); //работа мусорки
+  elementImage.addEventListener('click', () => openFigurePopup(item.name, item.link));
+  return elementTemplate;
 }
 
-initialCards.forEach(function (item){
+initialCards.forEach(function (item) {
   const elementTemplate = getCard(item)
   elementsPlace.prepend(elementTemplate);
 });

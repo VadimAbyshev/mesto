@@ -54,7 +54,7 @@
           <div class="popup__input_form">
 
             <input type="text" name="name" class="form__text-input form__text-input_type_name popup__input" id="name"
-              placeholder="Имя"  maxlength="40" minlength="2" required>
+              placeholder="Имя" maxlength="40" minlength="2" required>
 
             <span class="popup__invalid_type_name popup__error_span"></span>
 
@@ -62,7 +62,9 @@
 
           <div class="popup__input_form">
 
-            <input type="text" name="description" class="form__text-input form__text-input_type_discription popup__input" id="description" placeholder="О себе" maxlength="40" minlength="2" required>
+            <input type="text" name="description"
+              class="form__text-input form__text-input_type_discription popup__input" id="description"
+              placeholder="О себе" maxlength="40" minlength="2" required>
             <span class="popup__error_span popup__invalid_type_description"></span>
 
           </div>
@@ -70,7 +72,7 @@
         </form>
       </div>
     </div>
-    
+
     <div class="popup popup_add-card">
       <div class="popup__container">
         <button class="popup__close-button decoration" type="button"></button>
@@ -78,11 +80,12 @@
         <form action="#" class="form form_add-card popup__form" name="place-add" novalidate>
           <div class="popup__input_form">
             <input type="text" name="place-name" class="form__text-input form__text-input_type_place-name popup__input"
-              id="place-name" placeholder="Название"  maxlength="40" minlength="2" required>
+              id="place-name" placeholder="Название" maxlength="40" minlength="2" required>
             <span class="popup__error_span popup__invalid_type_place-name"></span>
           </div>
           <div class="popup__input_form">
-            <input type="url" name="place-link" class="form__text-input form__text-input_type_place-link popup__input" id="place-link" placeholder="Ссылка на картинку" required  maxlength="40" minlength="2">
+            <input type="url" name="place-link" class="form__text-input form__text-input_type_place-link popup__input"
+              id="place-link" placeholder="Ссылка на картинку" required maxlength="40" minlength="2">
             <span class="popup__error_span popup__invalid_type_place-link"></span>
           </div>
           <button type="submit" class="form__save-button decoration popup__form_save-button ">Добавить</button>
