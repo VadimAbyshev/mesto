@@ -10,6 +10,8 @@ const validationConfig = {
 const log = console.log;
 
 
+
+
 function enableValidation(validationConfig) {
     const forms = Array.from(document.querySelectorAll(validationConfig.formSelector));
     forms.forEach((form) =>{
@@ -73,13 +75,10 @@ function togglleButtonState(inputList, buttonSave, inactiveButtonClass){
     }
 }
 
-function resetErrorForm(form){
-    form.querySelectorAll(validationConfig.inputSelector).forEach((input) => {
-        const invalidationError = document.querySelector(`${validationConfig.errorSelector}${input.name}`);
-        if (!input.validity.valid){
-            hideInputError(input, invalidationError, validationConfig.inputErrorClass, validationConfig.textErrorClass)
-        }
-    })
-} 
+const disableButton = (button, { inactiveButtonClass }) => {
+    button.classList.add(inactiveButtonClass);
+    button.setAttribute("disabled", "disabled");
+  };
+
 
 enableValidation(validationConfig);

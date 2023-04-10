@@ -6,27 +6,38 @@ const nameAuthor = document.querySelector('.profile__name');
 const nameDescription = document.querySelector('.profile__description');
 const profileCloseButton = document.querySelector('.popup__close-button');
 const editForm = document.querySelector('.form')
-
+const inputListForm = editForm.querySelector('.form__text-input');
+const buttonListForm = editForm.querySelector('.form__save-button');
 
 
 function openPoup(popup) {
   
   popup.classList.add('popup_opened');
-};
+  document.addEventListener('keydown', closePopupEsc);
+}
 function closePopup(popup){
   popup.classList.remove('popup_opened');
-};
+  document.removeEventListener('keydown', closePopupEsc);
+}
 
 function closePopupOverlayClick (e) {
   if (e.target === e.currentTarget) {
     closePopup(e.target)
   }
 };
-
+function closePopupEsc(evt){
+  if (evt.key === 'Escape'){
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+}
 
 function openEditPopup(){
-  resetErrorForm(handleProfileFormSubmit);
+  
+  //resetValidationByClosePopup(handleProfileFormSubmit);
+  togglleButtonState(inputListForm, buttonListForm, validationConfig.inactiveButtonClass)
   openPoup(profilePopup);
+  disableButton(buttonListForm, validationConfig);
   nameInput.value =  nameAuthor.textContent;
   jobInput.value = nameDescription.textContent;
 }
@@ -82,6 +93,8 @@ function likeCardOnCLick(evt){
   evt.target.classList.toggle('element__like-button_active');
 }
 function openAddPopup(){
+  disableButton(buttonAddCard, validationConfig);
+  togglleButtonState(inputListForm, buttonListForm, validationConfig.inactiveButtonClass);
   openPoup(popupAddCard);
 }
 
