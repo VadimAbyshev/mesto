@@ -6,8 +6,8 @@ const nameAuthor = document.querySelector('.profile__name');
 const nameDescription = document.querySelector('.profile__description');
 const profileCloseButton = document.querySelector('.popup__close-button');
 const editForm = document.querySelector('.form')
-const inputListForm = editForm.querySelector('.form__text-input');
-const buttonListForm = editForm.querySelector('.form__save-button');
+const inputListForm = editForm.querySelectorAll('.form__text-input');
+const buttonSaveProfile = profilePopup.querySelector('.form__save-button');
 
 
 function openPoup(popup) {
@@ -35,9 +35,9 @@ function closePopupEsc(evt) {
 function openEditPopup() {
 
   //resetValidationByClosePopup(handleProfileFormSubmit);
-  togglleButtonState(inputListForm, buttonListForm, validationConfig.inactiveButtonClass)
+  togglleButtonState(inputListForm, buttonSaveProfile, validationConfig.inactiveButtonClass)
   openPoup(profilePopup);
-  disableButton(buttonListForm, validationConfig);
+ 
   nameInput.value = nameAuthor.textContent;
   jobInput.value = nameDescription.textContent;
 }
@@ -53,13 +53,13 @@ function handleProfileFormSubmit(evt) {
   closePopup(profilePopup);
 }
 
-const addCardButton = document.querySelector('.profile__button-add');
+const buttonAddCard = document.querySelector('.profile__button-add');
 const popupAddCard = document.querySelector('.popup_add-card');
-const closeAddButton = popupAddCard.querySelector('.popup__close-button');
+const buttonAddClose = popupAddCard.querySelector('.popup__close-button');
 const formAddCard = document.querySelector('.form_add-card');
 const placeName = document.querySelector('.form__text-input_type_place-name');
 const placeLink = document.querySelector('.form__text-input_type_place-link');
-const buttonAddCard = popupAddCard.querySelector('.form__save-button');
+const saveAddCard = popupAddCard.querySelector('.form__save-button'); 
 const elementsTemplate = document.querySelector('#element-template').content;
 
 const elementsPlace = document.querySelector('.elements');
@@ -93,8 +93,8 @@ function likeCardOnCLick(evt) {
   evt.target.classList.toggle('element__like-button_active');
 }
 function openAddPopup() {
-  disableButton(buttonAddCard, validationConfig);
-  togglleButtonState(inputListForm, buttonListForm, validationConfig.inactiveButtonClass);
+  formAddCard.reset()
+  togglleButtonState(inputListForm, saveAddCard, validationConfig.inactiveButtonClass);
   openPoup(popupAddCard);
 }
 
@@ -154,8 +154,8 @@ formAddCard.addEventListener('submit', (evt) => {
 profileEditButton.addEventListener('click', openEditPopup)
 profileCloseButton.addEventListener('click', closeEditPopup)
 closeCardButton.addEventListener('click', closeFigurePopup)
-closeAddButton.addEventListener('click', closeAddPopup)
-addCardButton.addEventListener('click', openAddPopup)
+buttonAddClose.addEventListener('click', closeAddPopup)
+buttonAddCard.addEventListener('click', openAddPopup)
 editForm.addEventListener('submit', handleProfileFormSubmit)
 popupAddCard.addEventListener('mousedown', (e) => closePopupOverlayClick(e))
 profilePopup.addEventListener('mousedown', (e) => closePopupOverlayClick(e))

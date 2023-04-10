@@ -75,10 +75,6 @@ function togglleButtonState(inputList, buttonSave, inactiveButtonClass) {
     }
 }
 
-const disableButton = (button, { inactiveButtonClass }) => {
-    button.classList.add(inactiveButtonClass);
-    button.setAttribute("disabled", "disabled");
-};
 
 
 enableValidation(validationConfig);
