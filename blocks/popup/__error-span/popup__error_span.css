@@ -1,4 +1,4 @@
-.popup__error_span{
+.popup__error-span{
         font-family: 'Inter';
         font-style: normal;
         color: red;
@@ -12,12 +12,12 @@
         height: 30px;
 }
 
-.popup__error_span:last-of-type{
+.popup__error-span:last-of-type{
     margin-bottom: 0;
 }
 
 @media screen and (max-width: 670px){
-.popup__error_span {
+.popup__error-span {
     width: 238px;
 }
 }

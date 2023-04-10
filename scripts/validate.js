@@ -1,8 +1,8 @@
 const validationConfig = {
     formSelector: '.popup__form',
     inputSelector: '.form__text-input',
-    submitButtonSelector: '.popup__form_save-button',
-    errorSelector: '.popup__invalid_type_',
+    submitButtonSelector: '.popup__save-button',
+    errorSelector: '.popup__invalide-type__',
     inactiveButtonClass: 'popup__button_disabled',
     inputErrorClass: 'popup__input_invalid',
     textErrorClass: 'popup__error_visible'

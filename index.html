@@ -23,7 +23,7 @@
             <p class="profile__description">Исследователь океана</p>
           </div>
         </div>
-        <button class="profile__button-add decoration popup__form_save-button" type="button"></button>
+        <button class="profile__button-add decoration" type="button"></button>
       </section>
 
       <template id="element-template">
@@ -32,7 +32,7 @@
           <img class="element__image" alt="#" src="#">
           <div class="element__info">
             <h2 class="element__title"></h2>
-            <button class="decoration element__like-button popup__form_save-button" type="button"></button>
+            <button class="decoration element__like-button" type="button"></button>
           </div>
         </div>
       </template>
@@ -51,24 +51,24 @@
         <button class="popup__close-button decoration" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form action="#" class="form popup__form" name="edit-info" novalidate>
-          <div class="popup__input_form">
+          <div class="popup__input-form">
 
             <input type="text" name="name" class="form__text-input form__text-input_type_name popup__input" id="name"
               placeholder="Имя" maxlength="40" minlength="2" required>
 
-            <span class="popup__invalid_type_name popup__error_span"></span>
+            <span class="popup__invalide-type__name popup__error-span"></span>
 
           </div>
 
-          <div class="popup__input_form">
+          <div class="popup__input-form">
 
             <input type="text" name="description"
               class="form__text-input form__text-input_type_discription popup__input" id="description"
-              placeholder="О себе" maxlength="40" minlength="2" required>
-            <span class="popup__error_span popup__invalid_type_description"></span>
+              placeholder="О себе" maxlength="200" minlength="2" required>
+            <span class="popup__error-span popup__invalide-type__description"></span>
 
           </div>
-          <button type="submit" class="form__save-button decoration popup__form_save-button">Сохранить</button>
+          <button type="submit" class="form__save-button decoration popup__save-button">Сохранить</button>
         </form>
       </div>
     </div>
@@ -78,17 +78,17 @@
         <button class="popup__close-button decoration" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
         <form action="#" class="form form_add-card popup__form" name="place-add" novalidate>
-          <div class="popup__input_form">
+          <div class="popup__input-form">
             <input type="text" name="place-name" class="form__text-input form__text-input_type_place-name popup__input"
-              id="place-name" placeholder="Название" maxlength="40" minlength="2" required>
-            <span class="popup__error_span popup__invalid_type_place-name"></span>
+              id="place-name" placeholder="Название" maxlength="30" minlength="2" required>
+            <span class="popup__error-span popup__invalide-type__place-name"></span>
           </div>
-          <div class="popup__input_form">
+          <div class="popup__input-form">
             <input type="url" name="place-link" class="form__text-input form__text-input_type_place-link popup__input"
-              id="place-link" placeholder="Ссылка на картинку" required maxlength="40" minlength="2">
-            <span class="popup__error_span popup__invalid_type_place-link"></span>
+              id="place-link" placeholder="Ссылка на картинку" required>
+            <span class="popup__error-span popup__invalide-type__place-link"></span>
           </div>
-          <button type="submit" class="form__save-button decoration popup__form_save-button ">Добавить</button>
+          <button type="submit" class="form__save-button decoration popup__save-button ">Добавить</button>
         </form>
       </div>
     </div>
