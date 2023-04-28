@@ -7,7 +7,7 @@ const validationConfig = {
     inputErrorClass: 'popup__input_invalid',
     textErrorClass: 'popup__error_visible'
 };
-
+const log = console.log;
 
 
 
@@ -32,14 +32,14 @@ function hangEventListenner(inputList, errorSelector, buttonSave, inactiveButton
 
 function checkInputValidity(input, errorSelector, textErrorClass, inputErrorClass) {
     const invalidationError = document.querySelector(`${errorSelector}${input.name}`)
-
+    log(invalidationError)
 
     if (input.validity.valid) {
         hideInputError(input, invalidationError, textErrorClass, inputErrorClass)
-     
+        log('Yes')
     } else {
         showInputError(input, invalidationError, textErrorClass, inputErrorClass)
-   
+        log('No')
     };
 
 };
