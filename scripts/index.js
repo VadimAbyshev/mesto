@@ -1,7 +1,7 @@
 import initialCards from "./dataObject.js";
-import Card from "./card.js";
-import formValidator from "./Validation.js";
-import { validationConfig } from "./Validation.js";
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+import { validationConfig } from "./dataObject.js";
 const profilePopup = document.querySelector('.popup_edit-profile');
 const nameInput = document.querySelector('.form__text-input_type_name');
 const jobInput = document.querySelector('.form__text-input_type_discription');
@@ -9,7 +9,7 @@ const profileEditButton = document.querySelector('.profile__button-edit');
 const nameAuthor = document.querySelector('.profile__name');
 const nameDescription = document.querySelector('.profile__description');
 const profileCloseButton = document.querySelector('.popup__close-button');
-const editForm = document.querySelector('.form')
+const editForm = document.querySelector('.form_edit-profile')
 
 
 function openPopup(popup) {
@@ -35,7 +35,7 @@ function closePopupEsc(evt) {
 }
 
 function openEditPopup() {
-  formValidity.resetFormError();
+  editFormValidator.resetFormError();
   openPopup(profilePopup);
   nameInput.value = nameAuthor.textContent;
   jobInput.value = nameDescription.textContent;
@@ -71,7 +71,7 @@ function createNewCard(item) {
 }
 
 function openAddPopup() {
-  formValidityAdd.resetFormError();
+  addFormValidator.resetFormError();
   openPopup(popupAddCard);
 }
 
@@ -106,11 +106,11 @@ formAddCard.addEventListener('submit', (evt) => {
   closeAddPopup(popupAddCard);
 });
 
-const formValidity = new formValidator(validationConfig, editForm);
-formValidity.enableValidation()
+const editFormValidator = new FormValidator(validationConfig, editForm);
+editFormValidator.enableValidation()
 
-const formValidityAdd = new formValidator(validationConfig, formAddCard);
-formValidityAdd.enableValidation()
+const addFormValidator = new FormValidator(validationConfig, formAddCard);
+addFormValidator.enableValidation()
 
 
 

@@ -1,16 +1,9 @@
-export const validationConfig = {
-    formSelector: '.popup__form',
-    inputSelector: '.form__text-input',
-    submitButtonSelector: '.popup__save-button',
-    errorSelector: '.popup__invlid-',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_invalid',
-    textErrorClass: 'popup__error_visible'
-};
+import { validationConfig } from "./dataObject.js";
 
 
 
-export default class formValidator {
+
+export default class FormValidator {
     constructor(config, form) {
         this._inputSelector = config.inputSelector;
         this._submitButtonSelector = config.submitButtonSelector;
@@ -56,13 +49,13 @@ export default class formValidator {
         invalidationError.classList.add(this._textErrorClass);
     };
 
-    _validInput() {
+    _areAllInputsValid() {
         return Array.from(this._inputList).every(input => input.validity.valid)
     }
 
 
     _togglleButtonState() {
-        if (this._validInput()) {
+        if (this._areAllInputsValid()) {
             this._button.classList.remove(this._inactiveButtonClass)
             this._button.disabled = false
         }
@@ -75,7 +68,6 @@ export default class formValidator {
     resetFormError() {
         this._inputList.forEach((input => {
             const invalidationError = this._form.querySelector(`${this._errorSelector}${input.name}`);
-            this._input = input;
             this._hideInputError(input, invalidationError);
         }))
         this._togglleButtonState()

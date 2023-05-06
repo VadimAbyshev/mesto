@@ -7,8 +7,9 @@ export default class Card {
 
   }
 
-  _deleteCardOnClick(event) {
-    event.target.closest('.element').remove();
+  _deleteCardOnClick = () => {
+  this._cloneElement.remove();
+  this._cloneElement = null;
   }
 
   _toggleLike = () => {

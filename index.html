@@ -45,33 +45,31 @@
       <p class="footer__copyright">©2023 Абышев Вадим Олегович</p>
 
     </footer>
+<div class="popup popup_edit-profile">
+  <div class="popup__container">
+    <button class="popup__close-button decoration" type="button"></button>
+    <h2 class="popup__title">Редактировать профиль</h2>
+    <form action="#" class="form popup__form form_edit-profile" name="edit-info" novalidate>
+      <div class="popup__input-form">
 
-    <div class="popup popup_edit-profile">
-      <div class="popup__container">
-        <button class="popup__close-button decoration" type="button"></button>
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <form action="#" class="form popup__form" name="edit-info" novalidate>
-          <div class="popup__input-form">
+        <input type="text" name="name" class="form__text-input form__text-input_type_name popup__input" id="name"
+          placeholder="Имя" maxlength="40" minlength="2" required>
 
-            <input type="text" name="name" class="form__text-input form__text-input_type_name popup__input" id="name"
-              placeholder="Имя" maxlength="40" minlength="2" required>
+        <span class="popup__invlid-name popup__error-span"></span>
 
-            <span class="popup__invlid-name popup__error-span"></span>
-
-          </div>
-
-          <div class="popup__input-form">
-
-            <input type="text" name="description"
-              class="form__text-input form__text-input_type_discription popup__input" id="description"
-              placeholder="О себе" maxlength="200" minlength="2" required>
-            <span class="popup__error-span popup__invlid-description"></span>
-
-          </div>
-          <button type="submit" class="form__save-button decoration popup__save-button">Сохранить</button>
-        </form>
       </div>
-    </div>
+
+      <div class="popup__input-form">
+
+        <input type="text" name="description" class="form__text-input form__text-input_type_discription popup__input"
+          id="description" placeholder="О себе" maxlength="200" minlength="2" required>
+        <span class="popup__error-span popup__invlid-description"></span>
+
+      </div>
+      <button type="submit" class="form__save-button decoration popup__save-button">Сохранить</button>
+    </form>
+  </div>
+</div>
 
     <div class="popup popup_add-card">
       <div class="popup__container">
@@ -103,8 +101,6 @@
 
   </div>
   <script type='module' src="./scripts/index.js"></script>
-  <script type="module" src="./scripts/Card.js"></script>
-  <script type="module" src="./scripts/Validation.js"></script>
 
 </body>
 
