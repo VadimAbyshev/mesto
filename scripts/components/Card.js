@@ -1,6 +1,7 @@
 export default class Card {
   constructor(cardData, templateSelector, openFigurePopup) {
-    this._name = cardData.name;
+    this._cardData = cardData;
+    this._name = cardData.title;
     this._link = cardData.link;
     this._templateSelector = templateSelector;
     this._openFigurePopup = openFigurePopup;
@@ -15,8 +16,12 @@ export default class Card {
   _toggleLike = () => {
     this._likeElement.classList.toggle('element__like-button_active');
   }
+  _handleOpenFigurePopup = () => {
+    this._openFigurePopup(this._cardData)
+  }
+
   _setEventListeners() {
-    this._imgElement.addEventListener('click', () => this._openFigurePopup(this._name, this._link));
+    this._imgElement.addEventListener('click', this._handleOpenFigurePopup);
     this._likeElement.addEventListener('click', this._toggleLike);
     this._bucketElement.addEventListener('click', this._deleteCardOnClick);
   }

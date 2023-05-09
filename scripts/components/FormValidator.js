@@ -1,4 +1,4 @@
-import { validationConfig } from "./dataObject.js";
+import { validationConfig } from "../utils/dataObject.js";
 
 
 
