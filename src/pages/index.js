@@ -1,10 +1,10 @@
-import Card from "./components/Card.js";
-import FormValidator from "./components/FormValidator.js";
-import PopupWithImage from "./components/PopupWithImage.js";
-import Popup from "./components/Popup.js";
-import Section from "./components/Section.js";
-import UserInfo from "./components/UserInfo.js";
-import PopupWithForm from "./components/PopupWithForm.js";
+import Card from "../scripts/components/Card.js";
+import FormValidator from "../scripts/components/FormValidator.js";
+import PopupWithImage from "../scripts/components/PopupWithImage.js";
+import Popup from "../scripts/components/Popup.js";
+import Section from "../scripts/components/Section.js";
+import UserInfo from "../scripts/components/UserInfo.js";
+import PopupWithForm from "../scripts/components/PopupWithForm.js";
 import {
   initialCards,
   validationConfig,
@@ -14,7 +14,7 @@ import {
   popupProfileSelector,
   popupImageSelector,
   configInfo
-}from "./utils/dataObject.js";
+}from "../scripts/utils/dataObject.js";
 import '../pages/index.css';
 
 
@@ -32,16 +32,12 @@ const editForm = document.querySelector('.form_edit-profile')
 
 const userInfo = new UserInfo(configInfo);
 
-const popupProfile = new PopupWithForm(popupProfileSelector, (evt) => {
-  evt.preventDefault();
-  userInfo.setUserInfo(popupProfile.getInputValues())
-  popupProfile.close();
+const popupProfile = new PopupWithForm(popupProfileSelector, (data) => {
+  userInfo.setUserInfo(data)
 })
 
-const popupAdd = new PopupWithForm(popupAddCard, (evt) => {
-  evt.preventDefault();
-  section.addItem(section.renderer(popupAdd.getInputValues()))
-  popupAdd.close();
+const popupAdd = new PopupWithForm(popupAddCard, (data) => {
+  section.addItem(createNewCard(data))
 })
 
 
@@ -49,14 +45,6 @@ const profilePopup = new Popup(popupProfileSelector);
 
 const popupImage = new PopupWithImage(popupImageSelector);
 
-const section = new Section({
-  items: initialCards,
-  renderer: (item) => {
-    const card = new Card(item, templateSelector, popupImage.open);
-    return card.createCard();
-  }
-}, elementsPlace) 
-section.addCardFromArray()
 
 
 function createNewCard(item) {
@@ -64,6 +52,13 @@ function createNewCard(item) {
   const cardElement = card.createCard()
   return cardElement
 }
+const section = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    section.addItem(createNewCard(item))
+  }
+}, elementsPlace) 
+section.addCardFromArray()
 
 const editFormValidator = new FormValidator(validationConfig, editForm);
 editFormValidator.enableValidation()
