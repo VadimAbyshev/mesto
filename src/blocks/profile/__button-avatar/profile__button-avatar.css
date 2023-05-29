@@ -10,7 +10,7 @@
     transition: background-color .7s ease;
     transform: translate(-50%,-50%);
     outline: none;
-}
+};
 
 .profile__button-avatar:hover {
     background-color: rgba(0,0,0,.8);
@@ -18,5 +18,5 @@
     background-size: 26px 26px;
     background-repeat: no-repeat;
     background-position: 50%;
-    cursor: pointer
-}
+    cursor: pointer;
+};
