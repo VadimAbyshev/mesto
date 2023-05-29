@@ -35,24 +35,29 @@ const validationConfig = {
     textErrorClass: 'popup__error_visible'
 };
 
-
+const popupDeleteSelector = '.popup_delete-card';
+const popupEditAvatar ='.popup_edit-avatar';
 const popupAddCard = '.popup_add-card';
 const elementsPlace = '.elements';
 const templateSelector = '#element-template';
 const popupProfileSelector = '.popup_edit-profile';
 const popupImageSelector = '.popup_open-card';
+
 const configInfo = {
   nameAuthor: '.profile__name',
-  nameDescription: '.profile__description'
+  nameDescription: '.profile__description',
+  profileAvatar: '.profile__avatar'
 };
 
 export {
   initialCards,
   validationConfig,
   popupAddCard,
+  popupEditAvatar,
   elementsPlace,
   templateSelector,
   popupProfileSelector,
   popupImageSelector,
+  popupDeleteSelector,
   configInfo
 }
