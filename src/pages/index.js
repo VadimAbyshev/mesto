@@ -19,7 +19,7 @@ import {
 }from "../scripts/utils/dataObject.js";
 import '../pages/index.css';
 import Api from "../scripts/components/Api.js"
-import { error } from "jquery";
+
 
 
 
@@ -27,7 +27,8 @@ const buttonAddCard = document.querySelector('.profile__button-add');
 const formAddCard = document.querySelector('.form_add-card');
 const profileEditButton = document.querySelector('.profile__button-edit');
 const avatarEditButton = document.querySelector('.profile__button-avatar');
-const buttonDeleteCard = document.querySelector('.element__bucket-button')
+const buttonDeleteCard = document.querySelector('.element__bucket-button');
+const formEditAvatar = document.querySelector('.form_edti-avatar')
 
 const editForm = document.querySelector('.form_edit-profile')
 
@@ -40,12 +41,11 @@ const api = new Api({
 });
 
 
-const popupDelete = new PopupWithDeleteForm(popupDeleteSelector, ({card, cardId}) => {
-  api.delCard(cardId)
+const popupDelete = new PopupWithDeleteForm(popupDeleteSelector, (itemId) => {
+  api.delCard(itemId)
   .then(res => {
-    card.removeCardElement()
+    popupDelete.getElement().removeCardElement()
     popupDelete.close()
-    
   })
   .catch((error => console.error(`Ошибка удаления карточки ${error}`)))
   .finally(() => popupDelete.setupDefaultText())
@@ -57,19 +57,19 @@ const userInfo = new UserInfo(configInfo);
 const popupProfile = new PopupWithForm(popupProfileSelector, (data) => {
   api.setUserInfo(data)
   .then(res => {
-    userInfo.setUserInfo({username: res.name, description: res.about, avatar: res.avatar 
+    userInfo.setUserInfo({username: res.name, description: res.about, avatar: res.avatar })
+    popupProfile.close()
   })
-  popupProfile.close()
-})
   .catch((error => console.error(`Ошибка редактирования профиля ${error}`)))
   .finally(() => popupProfile.setupDefaultText())
 })
 
 const popupAdd = new PopupWithForm(popupAddCard, (data) => {
-  Promise.all([api.getInfo(), api.addCard(data)])
-  .then(([dataUser, dataCard]) => {
-    dataCard.myid = dataUser._id;
-    section.addItemPrepend(createNewCard(dataCard))
+  api.addCard(data)
+  .then(dataCard => {
+    console.log(userInfo.getid())
+    dataCard.myid = userInfo.getid();
+    cardsContainer.addItemPrepend(createNewCard(dataCard))
     popupAdd.close()
   })
   .catch((error => console.error(`Ошибка создания карточки ${error}`)))
@@ -100,7 +100,7 @@ function createNewCard(item) {
       api.delLike(cardId)
       .then(res =>{
         console.log(res)
-        card.isLiked(res.likes);
+        card.setLikes(res.likes);
       })
       .catch((error => console.error(`Ошибка дизлайка ${error}`)))
     }
@@ -108,7 +108,7 @@ function createNewCard(item) {
       api.addLike(cardId)
       .then(res => {
         console.log(res)
-        card.isLiked(res.likes)
+        card.setLikes(res.likes)
       })
       .catch((error => console.error(`Ошибка добавления лайка ${error}`)))
     }
@@ -118,8 +118,8 @@ function createNewCard(item) {
 }
 
 
-const section = new Section(element => {
-    section.addItem(createNewCard(element))
+const cardsContainer = new Section(element => {
+  cardsContainer.addItem(createNewCard(element))
   }, elementsPlace) 
 
 
@@ -128,6 +128,9 @@ editFormValidator.enableValidation()
 
 const addFormValidator = new FormValidator(validationConfig, formAddCard);
 addFormValidator.enableValidation()
+
+const editAvatarValidator = new FormValidator(validationConfig, formEditAvatar);
+editAvatarValidator.enableValidation();
 
 profilePopup.setEventListeners();
 popupAdd.setEventListeners()
@@ -138,6 +141,7 @@ popupImage.setEventListeners();
 
 
 function openEditAvatar(){
+  editAvatarValidator.resetFormError();
   popupAvatar.open()
 }
 
@@ -152,9 +156,7 @@ function openEditPopup() {
   addFormValidator.resetFormError();
   popupAdd.open();
 }
-// function openDeleteCard(){
-//   popupDelete.open();
-// }
+
 
 
 avatarEditButton.addEventListener('click', openEditAvatar)
@@ -166,7 +168,9 @@ Promise.all([api.getInfo(), api.getCards()])
   .then(([dataUser, dataCard])  =>{
     dataCard.forEach(element => element.myid = dataUser._id);
     userInfo.setUserInfo({username: dataUser.name, description: dataUser.about, avatar: dataUser.avatar})
-    section.addCardFromArray(dataCard)
+    
+    userInfo.setid(dataUser._id)
+    cardsContainer.addItemFromArray(dataCard)
   })
-  .catch((error => console.error(`Ошибка редактирования профиля ${error}`)))
+  .catch((error => console.error(`Ошибка загрузки профиля ${error}`)))
   

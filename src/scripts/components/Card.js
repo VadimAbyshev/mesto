@@ -21,7 +21,7 @@ export default class Card {
   }
 
   _deleteCardElement = () => {
-    this._openDelete({card: this, cardId: this._cardId})
+    this._openDelete(this, this._cardId )
   }
 
 
@@ -31,7 +31,7 @@ export default class Card {
   
   }
 
-  isLiked(likes){
+  setLikes(likes){
     this._likeElement.classList.toggle('element__like-button_active');
     this._counter.textContent = likes.length;
   }

@@ -17,15 +17,26 @@ setEventListeners(){
     this._form.addEventListener('submit', (evt) => {
         evt.preventDefault();
         this._submitButton.textContent = `${this._submitButton.textContent}...`
-        this._submitFunction({card: this._element, cardId: this._cardId})
+        this._submitFunction(this._itemId);
         
     })
 }
 
-open = ({card, cardId}) => {
+// open = ({card, cardId}) => {
+//     super.open();
+//     this._element = card;
+//     this._cardId = cardId;
+//     console.log(this._cardId)
+// }
+
+open = (item, itemId) => {
     super.open();
-    this._element = card;
-    this._cardId = cardId;
-}
+    this._item = item;
+    this._itemId = itemId;
+    console.log(this._itemId)
+  }
+  getElement = () => {
+    return this._item ;
+  }
 
 }

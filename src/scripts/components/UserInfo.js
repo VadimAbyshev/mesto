@@ -14,4 +14,11 @@ export default class UserInfo{
         this._nameAuthor.textContent = username;
         this._nameDescription.textContent = description;
     }
+
+    setid(id){
+        this._id = id;
+    }
+    getid(){
+        return this._id
+    }
 }

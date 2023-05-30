@@ -1,4 +1,4 @@
-import { data } from "jquery";
+// import { data } from "jquery";
 
 export default class Api {
     constructor(options) {
